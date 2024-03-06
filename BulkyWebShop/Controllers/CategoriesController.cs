@@ -26,6 +26,6 @@ namespace BulkyWebShop.Controllers
         {
             _context.Categories.Add(category);
             return View(category);
-        }//test
+        }
     }
 }
