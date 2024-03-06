@@ -5,8 +5,8 @@
         <div class="row">
             <h2 class="text-primary mb-0">Create category</h2>
         </div>
-        <div asp-validation-summary="All" class="mt-2"></div>
-        <hr/>
+@*         <div asp-validation-summary="None" class="mt-2"></div>
+ *@        <hr/>
         <div class="mb-2">
             <label asp-for="Name" class="mb-1"></label>
             <input asp-for="Name" type="text" class="form-control" />
@@ -30,3 +30,9 @@
         </div>
     </form>
 </div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

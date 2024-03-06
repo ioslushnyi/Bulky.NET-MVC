@@ -8,7 +8,7 @@
             </h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Categories" asp-action="CreateCategory" class="btn btn-primary">
+            <a asp-controller="Categories" asp-action="CreateCategory"class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i>&nbsp; Create category
             </a>
         </div>
@@ -23,6 +23,7 @@
                 <th>
                     Disaply Order
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,16 @@
                 <tr>
                     <td>@cat.Name</td>
                     <td>@cat.DisplayOrder</td>
+                    <td>
+                        <div class="w-100 btn-group " role="group">
+                            <a asp-controller="Categories" asp-action="EditCategory" class="btn btn-info mx-2 rounded-2">
+                                <i class="bi-pencil-square"></i>&nbsp;Edit
+                            </a>
+                            <a asp-controller="Categories" asp-action="DeleteCategory" class="btn btn-secondary mx-2 rounded-2">
+                                <i class="bi-trash-fill"></i>&nbsp;Delete
+                            </a>
+                        </div>
+                    </td>
                 </tr>
 
             }

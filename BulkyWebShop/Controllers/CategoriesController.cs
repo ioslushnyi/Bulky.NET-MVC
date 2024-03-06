@@ -26,7 +26,7 @@ namespace BulkyWebShop.Controllers
         {
             if (category.Name == category.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("name", "Name must be different from DisplayOrder");
+                ModelState.AddModelError("name", "name must be different from displayorder");
             }
             if (ModelState.IsValid)
             {
@@ -35,6 +35,15 @@ namespace BulkyWebShop.Controllers
                 return RedirectToAction("Index", "Categories");
             }
             return View();
+        }
+
+        public IActionResult EditCategory(Category category)
+        {
+            return View(category);
+        }
+        public IActionResult DeleteCategory(Category category)
+        {
+            return View(category);
         }
     }
 }
