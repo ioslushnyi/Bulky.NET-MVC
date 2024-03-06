@@ -24,8 +24,17 @@ namespace BulkyWebShop.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category category)
         {
-            _context.Categories.Add(category);
-            return View(category);
+            if (category.Name == category.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "Name must be different from DisplayOrder");
+            }
+            if (ModelState.IsValid)
+            {
+                _context.Categories.Add(category);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Categories");
+            }
+            return View();
         }
     }
 }
