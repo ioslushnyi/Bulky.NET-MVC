@@ -11,7 +11,7 @@ namespace BulkyWebShop.Controllers
         {
             this._context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index()//test
         {
             List<Category> CategoryList = _context.Categories.ToList<Category>(); 
             return View(CategoryList);
