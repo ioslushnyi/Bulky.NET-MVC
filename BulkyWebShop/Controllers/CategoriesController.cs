@@ -21,5 +21,11 @@ namespace BulkyWebShop.Controllers
             
             return View();
         }
+        [HttpPost]
+        public IActionResult CreateCategory(Category category)
+        {
+            _context.Categories.Add(category);
+            return View(category);
+        }
     }
 }

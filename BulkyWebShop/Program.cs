@@ -1,4 +1,5 @@
 using BulkyWebShop.Data;
+using BulkyWebShop.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
