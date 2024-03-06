@@ -1,7 +1,14 @@
+using BulkyWebShop.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// explicit typing for better type visibiity
+Action<DbContextOptionsBuilder> OPT = options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+// add EF Core to the project
+builder.Services.AddDbContext<ApplicationDbContext>(OPT);
 
 var app = builder.Build();
 
