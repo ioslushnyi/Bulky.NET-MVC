@@ -3,6 +3,7 @@ using BulkyWebShop.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyWebShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240307144459_Test4")]
+    partial class Test4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,6 +40,9 @@ namespace BulkyWebShop.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<int>("Test")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
@@ -46,25 +52,29 @@ namespace BulkyWebShop.Migrations
                         {
                             Id = 1,
                             DisplayOrder = 1,
-                            Name = "Action1"
+                            Name = "Action1",
+                            Test = 0
                         },
                         new
                         {
                             Id = 2,
                             DisplayOrder = 2,
-                            Name = "Sci-Fi"
+                            Name = "Sci-Fi",
+                            Test = 0
                         },
                         new
                         {
                             Id = 3,
                             DisplayOrder = 3,
-                            Name = "History"
+                            Name = "History",
+                            Test = 0
                         },
                         new
                         {
                             Id = 15,
                             DisplayOrder = 5,
-                            Name = "sdf3"
+                            Name = "sdf",
+                            Test = 22
                         });
                 });
 #pragma warning restore 612, 618

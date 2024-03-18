@@ -14,5 +14,6 @@ namespace BulkyWebShop.Models
         [Range(1,1000,ErrorMessage ="Please provide a number in the range 1-1000")]
         [DisplayName("Display Order")]
         public int DisplayOrder { get; set; }
+        public int TestVal;
     }
 }
