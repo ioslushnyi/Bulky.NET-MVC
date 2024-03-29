@@ -16,7 +16,7 @@ namespace BulkyWebShop.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -46,7 +46,7 @@ namespace BulkyWebShop.Migrations
                         {
                             Id = 1,
                             DisplayOrder = 1,
-                            Name = "Action1"
+                            Name = "Action"
                         },
                         new
                         {
@@ -64,7 +64,7 @@ namespace BulkyWebShop.Migrations
                         {
                             Id = 15,
                             DisplayOrder = 5,
-                            Name = "sdf3"
+                            Name = "sdf4"
                         });
                 });
 #pragma warning restore 612, 618

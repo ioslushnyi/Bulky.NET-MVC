@@ -11,15 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BulkyWebShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240307144608_Test5")]
-    partial class Test5
+    [Migration("20240329085645_AddCategoryToDb")]
+    partial class AddCategoryToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -40,9 +40,6 @@ namespace BulkyWebShop.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int>("Test")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
@@ -52,29 +49,25 @@ namespace BulkyWebShop.Migrations
                         {
                             Id = 1,
                             DisplayOrder = 1,
-                            Name = "Action1",
-                            Test = 0
+                            Name = "Action"
                         },
                         new
                         {
                             Id = 2,
                             DisplayOrder = 2,
-                            Name = "Sci-Fi",
-                            Test = 0
+                            Name = "Sci-Fi"
                         },
                         new
                         {
                             Id = 3,
                             DisplayOrder = 3,
-                            Name = "History",
-                            Test = 0
+                            Name = "History"
                         },
                         new
                         {
                             Id = 15,
                             DisplayOrder = 5,
-                            Name = "sdf3",
-                            Test = 22
+                            Name = "sdf4"
                         });
                 });
 #pragma warning restore 612, 618

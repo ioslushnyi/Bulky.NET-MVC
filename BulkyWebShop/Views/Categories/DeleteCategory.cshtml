@@ -3,25 +3,22 @@
 <div class="container mt-4 p-3 border rounded-2">
     <form method="post">
         @*Explicitly specify the Id field in hidden input to make sure data is submitted to a controller (required for property identifiers different from "id").*@
+        <input asp-for="Id" hidden />
         <div class="row">
-            <h2 class="text-primary mb-0">Create Category</h2>
+            <h2 class="text-primary mb-0">Delete Category</h2>
         </div>
-@*         <div asp-validation-summary="None" class="mt-2"></div>
- *@        <hr/>
+        <hr />
         <div class="mb-2">
             <label asp-for="Name" class="mb-1"></label>
-            <input asp-for="Name" type="text" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <input asp-for="Name" readonly type="text" class="form-control" />
         </div>
         <div class="mb-3">
             <label asp-for="DisplayOrder" class="mb-1"></label>
-            <input asp-for="DisplayOrder" type="text" class="form-control" />
-            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-
+            <input asp-for="DisplayOrder" readonly type="text" class="form-control" />
         </div>
         <div class="row">
             <div class="col-6 col-md-4">
-                <button type="submit" class="btn btn-primary form-control">Create</button>
+                <button type="submit" class="btn btn-danger form-control">Delete</button>
             </div>
             <div class="col-6 col-md-4">
                 <a asp-controller="Categories" asp-action="Index" class="btn btn-outline-secondary form-control">
@@ -31,9 +28,3 @@
         </div>
     </form>
 </div>
-
-@section Scripts {
-    @{
-        <partial name="_ValidationScriptsPartial"/>
-    }
-}

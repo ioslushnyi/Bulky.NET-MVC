@@ -5,7 +5,7 @@
 namespace BulkyWebShop.Migrations
 {
     /// <inheritdoc />
-    public partial class Test5 : Migration
+    public partial class AddCategoryToDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,9 +13,9 @@ namespace BulkyWebShop.Migrations
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
-                keyValue: 15,
+                keyValue: 1,
                 column: "Name",
-                value: "sdf3");
+                value: "Action");
         }
 
         /// <inheritdoc />
@@ -24,9 +24,9 @@ namespace BulkyWebShop.Migrations
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
-                keyValue: 15,
+                keyValue: 1,
                 column: "Name",
-                value: "sdf");
+                value: "Action1");
         }
     }
 }
