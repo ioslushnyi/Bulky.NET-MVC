@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace BulkyWebShop.Models
+namespace Bulky.Models
 {
     public class Category
     {
@@ -11,7 +11,7 @@ namespace BulkyWebShop.Models
         [MaxLength(30)]
         [DisplayName("Category Name")]
         public string Name { get; set; } = string.Empty;
-        [Range(1,1000,ErrorMessage ="Please provide a number in the range 1-1000")]
+        [Range(1, 1000, ErrorMessage = "Please provide a number in the range 1-1000")]
         [DisplayName("Display Order")]
         public int DisplayOrder { get; set; }
     }

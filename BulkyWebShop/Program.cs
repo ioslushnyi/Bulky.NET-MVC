@@ -1,5 +1,7 @@
-using BulkyWebShop.Data;
-using BulkyWebShop.Models;
+using Bulky.DataAccess.Data;
+using Bulky.DataAccess.Repository;
+using Bulky.DataAccess.Repository.IRepository;
+using Bulky.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddControllersWithViews();
 Action<DbContextOptionsBuilder> OPT = options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 // add EF Core to the project
 builder.Services.AddDbContext<ApplicationDbContext>(OPT);
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 
